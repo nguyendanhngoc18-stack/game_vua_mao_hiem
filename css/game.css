@@ -1,0 +1,56 @@
+:root {
+  color-scheme: dark;
+  font-family: system-ui, sans-serif;
+  background: #10131a;
+  color: #f3f5f7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.page {
+  width: min(100% - 32px, 960px);
+  margin: 32px auto;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 1.5rem;
+}
+
+.game {
+  overflow: hidden;
+  border: 1px solid #394150;
+  border-radius: 8px;
+  background: #080a0e;
+}
+
+.player {
+  display: grid;
+  min-height: 480px;
+  place-items: center;
+  padding: 24px;
+  text-align: center;
+}
+
+.player ruffle-player {
+  width: 100%;
+  min-height: 480px;
+}
+
+#status {
+  max-width: 640px;
+  line-height: 1.6;
+}
+
+.hint {
+  color: #b7c0ce;
+  font-size: 0.9rem;
+}
