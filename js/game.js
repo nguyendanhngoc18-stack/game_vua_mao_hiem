@@ -1,5 +1,5 @@
 (() => {
-  const gamePath = "./assets/supper-tramper.swf";
+  const gamePath = "./assets/supper-tramper-vi.swf";
   const playerElement = document.getElementById("player");
   const statusElement = document.getElementById("status");
 
