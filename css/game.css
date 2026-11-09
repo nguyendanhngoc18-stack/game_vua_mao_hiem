@@ -1,56 +1,52 @@
 :root {
   color-scheme: dark;
-  font-family: system-ui, sans-serif;
-  background: #10131a;
-  color: #f3f5f7;
+  background: #000;
 }
 
 * {
   box-sizing: border-box;
 }
 
+html,
 body {
-  min-width: 320px;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0;
+  overflow: hidden;
 }
 
 .page {
-  width: min(100% - 32px, 960px);
-  margin: 32px auto;
-}
-
-h1 {
-  margin: 0 0 16px;
-  font-size: 1.5rem;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
 }
 
 .game {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
-  border: 1px solid #394150;
-  border-radius: 8px;
-  background: #080a0e;
 }
 
 .player {
-  display: grid;
-  min-height: 480px;
-  place-items: center;
-  padding: 24px;
-  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .player ruffle-player {
+  display: block;
   width: 100%;
-  min-height: 480px;
+  height: 100%;
 }
 
 #status {
-  max-width: 640px;
-  line-height: 1.6;
-}
-
-.hint {
-  color: #b7c0ce;
-  font-size: 0.9rem;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 24px;
+  color: #fff;
+  font: 16px/1.5 system-ui, sans-serif;
+  text-align: center;
 }

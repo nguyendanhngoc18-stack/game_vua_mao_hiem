@@ -5,32 +5,31 @@
 
   function showStatus(message) {
     statusElement.textContent = message;
+    statusElement.hidden = false;
   }
 
   async function startGame() {
     try {
       const response = await fetch(gamePath, { cache: "no-store" });
       if (!response.ok) {
-        showStatus("Không tìm thấy hoặc không tải được assets/supper-tramper.swf.");
+        showStatus("Không tìm thấy hoặc không tải được tệp game.");
         return;
       }
 
       const game = await response.blob();
       if (game.size === 0) {
-        showStatus("Tệp assets/supper-tramper.swf rỗng; không thể khởi chạy game.");
+        showStatus("Tệp game rỗng; không thể khởi chạy.");
         return;
       }
 
       const ruffle = window.RufflePlayer?.newest();
       if (!ruffle) {
-        showStatus(
-          "Không tải được Ruffle từ CDN. Hãy kiểm tra kết nối mạng rồi tải lại trang."
-        );
+        showStatus("Không tải được game. Hãy kiểm tra kết nối mạng rồi tải lại trang.");
         return;
       }
 
       const gamePlayer = ruffle.createPlayer();
-      playerElement.replaceChildren(gamePlayer);
+      playerElement.append(gamePlayer);
       await gamePlayer.load(gamePath);
     } catch (error) {
       showStatus(
